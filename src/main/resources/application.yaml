@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: ordermanagement
+
+  # 1. Cấu hình Virtual Threads cho Java 21
+  threads:
+    virtual:
+      enabled: true
+
+  # 2. Cấu hình bảo mật OAuth2 Resource Server
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # Thay link JWKS thật của bạn vào đây (ví dụ link từ Keycloak, Okta, Auth0,...)
+          jwk-set-uri: http://localhost:8080/realms/master/protocol/openid-connect/certsgit
